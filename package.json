@@ -1,9 +1,12 @@
 {
   "name": "datetimez",
   "version": "1.0.10",
-  "description": "a small size date (and time) library based on native javascript Date.",
+  "description": "a small size date (and time) formater library based on native javascript Date.",
   "main": "build/index.js",
   "types": "build/index.d.ts",
+  "engines": {
+    "node": "*"
+  },
   "scripts": {
     "build": "npx eslint . --ext .ts && npx tsc && jest --runInBand --verbose",
     "test": "npx eslint . --ext .ts && npx tsc && jest --watchAll --coverage --runInBand --verbose",
@@ -12,7 +15,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "github.com/faturachman-yusup/datetimez"
+    "url": "https://github.com/faturachmanyusup/datetimez.git"
+  },
+  "bugs": {
+    "url": "https://github.com/faturachmanyusup/datetimez/issues"
   },
   "files": [
     "/build"
@@ -20,11 +26,11 @@
   "keywords": [
     "time",
     "date",
-    "moment"
+    "moment",
+    "format"
   ],
-  "author": "faturachman-yusup",
+  "author": "faturachmanyusup",
   "license": "MIT",
-  "dependencies": {},
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.6.0",
     "@typescript-eslint/parser": "^5.6.0",
