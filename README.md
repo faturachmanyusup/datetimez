@@ -7,7 +7,7 @@
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/faturachmanyusup/examples/blob/main/examples/datetimez)
 <br>
 
-a small size date (and time) library based on native javascript Date.
+a small size date (and time) formater library based on native javascript Date.
 
 ## Installing
 
@@ -46,13 +46,13 @@ current.year // current year
 
 // Create date using numbers as parameters
 const foo = date(2021, 5);
-foo.year			// 2021
-foo.month			// 5
-foo.date			// 1	default date is 1
-foo.hour			// 1	default hour is 0
-foo.minute			// 1	default minute is 0
-foo.second			// 1	default second is 0
-foo.millisecond		  // 1	default millisecond is 0
+foo.year    // 2021
+foo.month   // 5
+foo.date    // 1	default date is 1
+foo.hour    // 1	default hour is 0
+foo.minute    // 1	default minute is 0
+foo.second    // 1	default second is 0
+foo.millisecond   // 1	default millisecond is 0
 
 // Create date using string as parameter
 const bar = date('2021-11-01T03:24:00');
@@ -75,12 +75,12 @@ current.year // current year
 
 // Create date using numbers as parameters
 const foo = new DateTimez(2021, 5);
-foo.year			// 2021
-foo.month			// 5
-foo.date			// 1	default  1
-foo.hour			// 1	default 0
-foo.minute			// 1	default 0
-foo.second			// 1	default 0
+foo.year    // 2021
+foo.month   // 5
+foo.date    // 1	default  1
+foo.hour    // 1	default 0
+foo.minute    // 1	default 0
+foo.second    // 1	default 0
 foo.millisecond		  // 1	default 0
 
 // Create date using string as parameter
