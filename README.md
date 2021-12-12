@@ -2,6 +2,7 @@
 
 [![npm version](https://img.shields.io/npm/v/datetimez.svg?style=flat)](https://www.npmjs.com/package/datetimez)
 [![install size](https://packagephobia.now.sh/badge?p=datetimez)](https://packagephobia.now.sh/result?p=datetimez)
+[![year download ](https://img.shields.io/npm/dy/datetimez)](https://img.shields.io/npm/dy/datetimez)
 [![license](https://img.shields.io/npm/l/datetimez)](https://img.shields.io/npm/l/datetimez)
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/faturachmanyusup/examples/blob/main/examples/datetimez)
 <br>
@@ -51,7 +52,7 @@ foo.date			// 1	default date is 1
 foo.hour			// 1	default hour is 0
 foo.minute			// 1	default minute is 0
 foo.second			// 1	default second is 0
-foo.millisecond		// 1	default millisecond is 0
+foo.millisecond		  // 1	default millisecond is 0
 
 // Create date using string as parameter
 const bar = date('2021-11-01T03:24:00');
@@ -76,11 +77,11 @@ current.year // current year
 const foo = new DateTimez(2021, 5);
 foo.year			// 2021
 foo.month			// 5
-foo.date			// 1	default date is 1
-foo.hour			// 1	default hour is 0
-foo.minute			// 1	default minute is 0
-foo.second			// 1	default second is 0
-foo.millisecond		// 1	default millisecond is 0
+foo.date			// 1	default  1
+foo.hour			// 1	default 0
+foo.minute			// 1	default 0
+foo.second			// 1	default 0
+foo.millisecond		  // 1	default 0
 
 // Create date using string as parameter
 const bar = new DateTimez('2021-11-01T03:24:00');
@@ -100,7 +101,7 @@ Since DateTimez is based on native Javascript Date, everything that work on Date
 ```js
 const foo = date(2021, 2, 5, 12, 30, 10);
 ```
-let's say there is a variable named foo like code above. So, below attributes is be available on foo. <br>
+let's say there is a variable named foo like code above. So, below attributes will be available on foo. <br>
 Please note, attributes mark as readonly means it can't be modify directly. There are methods for modify each of them. <br>
 
 ### locale < String >
@@ -350,6 +351,8 @@ foo.format('dddd DD MMMM YYYY hh:mm:ss', 'id') // Sabtu 12 Desember 2021 03:24:0
     <td>2019, 2020, 2021, ...</td>
   </tr>
 </table>
+
+<br>
 
 ## Playground
 
