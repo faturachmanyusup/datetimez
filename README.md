@@ -29,6 +29,8 @@ Using yarn:
 $ yarn add datetimez
 ```
 
+<br>
+
 ## Using DateTimez
 
 There is some ways to use date time:
@@ -47,12 +49,12 @@ current.year // current year
 // Create date using numbers as parameters
 const foo = date(2021, 5);
 foo.year    // 2021
-foo.month   // 5
-foo.date    // 1	default date is 1
-foo.hour    // 1	default hour is 0
-foo.minute    // 1	default minute is 0
-foo.second    // 1	default second is 0
-foo.millisecond   // 1	default millisecond is 0
+foo.month   // 5 default 0
+foo.date    // 1 default 1
+foo.hour    // 1 default 0
+foo.minute    // 1 default 0
+foo.second    // 1 default 0
+foo.millisecond   // 1 default 0
 
 // Create date using string as parameter
 const bar = date('2021-11-01T03:24:00');
@@ -76,12 +78,12 @@ current.year // current year
 // Create date using numbers as parameters
 const foo = new DateTimez(2021, 5);
 foo.year    // 2021
-foo.month   // 5
-foo.date    // 1	default  1
-foo.hour    // 1	default 0
-foo.minute    // 1	default 0
-foo.second    // 1	default 0
-foo.millisecond		  // 1	default 0
+foo.month   // 5 default 0
+foo.date    // 1 default 1
+foo.hour    // 1 default 0
+foo.minute    // 1 default 0
+foo.second    // 1 default 0
+foo.millisecond	  // 1 default 0
 
 // Create date using string as parameter
 const bar = new DateTimez('2021-11-01T03:24:00');
@@ -153,7 +155,7 @@ foo.unix // 1614922210
 foo.lastDateOfMonth // 31
 ```
 
-
+<br>
 
 ## Modify
 <strong>Note</strong>: Every DateTimez instances are mutable. Calling any of the modify methods will modify instance's value.
