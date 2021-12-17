@@ -289,7 +289,7 @@ class DateTimez extends Date {
 	}
 }
 
-module.exports.default = (
+const date = (
 	year?: number | string | Date,
 	month?: number,
 	date?: number,
@@ -305,4 +305,5 @@ module.exports.default = (
 				: new Date(year || 1990, month || 0, date || 1, hour || 0, minute || 0, second || 0)
 	);
 
+module.exports.default = date;
 module.exports.DateTimez = DateTimez;
