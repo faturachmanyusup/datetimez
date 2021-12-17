@@ -121,18 +121,30 @@ class DateTimez extends Date {
 		throw new Error('Unable to update date directly');
 	}
 
+	/**
+	 * Set locale value using id of a string with a BCP 47 language tag, or an array of such strings.
+	 * 
+	 * For more info about locale:
+	 * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#locale_identification_and_negotiation
+	*/
 	setLocale(code: string): DateTimez {
 		this.#locale = code;
 
 		return this;
 	}
 
+	/**
+	 * Modify `DateTimez` by adding date(s) according to `num`.
+	*/
 	addDate(num: number): DateTimez {
 		this.setDate(this.getDate() + num);
 
 		return this;
 	}
 
+	/**
+	 * Modify `DateTimez` by adding month(s) according to `num`.
+	*/
 	addMonth(num: number): DateTimez {
 		const target: DateTimez = new DateTimez(this.year, this.month + num);
 
@@ -145,6 +157,9 @@ class DateTimez extends Date {
 		return this;
 	}
 
+	/**
+	 * Modify `DateTimez` by adding year(s) according to `num`.
+	*/
 	addYear(num: number): DateTimez {
 		const target: DateTimez = new DateTimez(this.year + 1, this.month);
 
@@ -157,6 +172,9 @@ class DateTimez extends Date {
 		return this;
 	}
 
+	/**
+	 * Modify `DateTimez` by subtracting year(s) according to `num`.
+	*/
 	subtractYear(num: number): DateTimez {
 		const target: DateTimez = new DateTimez(this.year - 1, this.month);
 
@@ -169,12 +187,18 @@ class DateTimez extends Date {
 		return this;
 	}
 
+	/**
+	 * Modify `DateTimez` by subtracting date(s) according to `num`.
+	*/
 	subtractDate(num: number): DateTimez {
 		this.setDate(this.getDate() - num);
 
 		return this;
 	}
 
+	/**
+	 * Modify `DateTimez` by subtracting month(s) according to `num`.
+	*/
 	subtractMonth(num: number): DateTimez {
 		const target: DateTimez = new DateTimez(this.year, this.month - num);
 
@@ -187,6 +211,9 @@ class DateTimez extends Date {
 		return this;
 	}
 
+	/**
+	 * Takes a string of tokens and replaces them with their corresponding values. You can freely decide the separators.
+	*/
 	format(format: string, locale: string = this.#locale): string {
 		const yearFull = this.toLocaleString(locale, { year: 'numeric' });
 		const year: string = yearFull.slice(2);
@@ -221,20 +248,48 @@ class DateTimez extends Date {
 			.replace('ss', second);
 	}
 
+	/**
+	 * Check if a `DateTimez` is before another `Date`. Return `false` if equal.
+	 * 
+	 * Units of measurements: Year, Month, Date, Hour, Minute, Second
+	*/
 	isBefore(d: Date): boolean {
 		return this.unix < new DateTimez(d).unix;
 	}
 
+	/**
+	 * Check if a `DateTimez` is after another `Date`. Return `false` if equal.
+	 * 
+	 * Units of measurements: Year, Month, Date, Hour, Minute, Second
+	*/
 	isAfter(d: Date): boolean {
 		return this.unix > new DateTimez(d).unix;
 	}
 
+	/**
+	 * Check if whether a `DateTimez` is equal to another `Date`.
+	 * 
+	 * Units of measurements: Year, Month, Date, Hour, Minute, Second
+	*/
 	isEqual(d: Date): boolean {
 		return this.unix === new DateTimez(d).unix;
 	}
+	
+	/**
+	 * Check if a DateTimez is between 2 other Dates.
+	 * Return true if equal to first parameter or second parameter.
+	 * 
+	 * Units of measurements: Year, Month, Date, Hour, Minute, Second
+	*/
+	isBetween(d1: Date, d2: Date): boolean {
+		const start: DateTimez = new DateTimez(d1);
+		const end: DateTimez = new DateTimez(d2);
+
+		return (this.unix >= start.unix) && (this.unix <= end.unix); 
+	}
 }
 
-const date = (
+module.exports.default = (
 	year?: number | string | Date,
 	month?: number,
 	date?: number,
@@ -250,5 +305,4 @@ const date = (
 				: new Date(year || 1990, month || 0, date || 1, hour || 0, minute || 0, second || 0)
 	);
 
-module.exports = date;
 module.exports.DateTimez = DateTimez;

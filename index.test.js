@@ -1,5 +1,5 @@
 /* eslint-disable */
-const date = require('./build');
+const date = require('./build').default;
 const { DateTimez } = require('./build');
 
 describe('Test function date', () => {
@@ -285,5 +285,14 @@ describe('Test class DateTimez', () => {
 
 		expect(d1.isEqual(d2)).toBe(true);
 		expect(d1.isEqual(d3)).toBe(false);
+	});
+
+	test('method isBetween should return valid value', () => {
+		const d1 = new DateTimez(2021, 11, 5);
+		const d2 = new DateTimez(2021, 11, 7);
+		const d3 = new Date(2021, 11, 10)
+
+		expect(d1.isBetween(d2, d3)).toBe(false);
+		expect(d2.isBetween(d1, d3)).toBe(true);
 	});
 });

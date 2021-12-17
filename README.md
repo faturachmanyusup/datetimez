@@ -246,6 +246,9 @@ foo.subtractYear(1).year // 2019
 foo.date // 28
 ```
 
+<br/>
+
+## Modify
 ### isBefore (d: Date): DateTimez
 ```js
 const year2019 = date(2019, 5, 20);
@@ -275,6 +278,23 @@ year.isAfter(sameYear) // false
 sameYear.isAfter(year) // false
 sameYear.isAfter(year2021) // true
 ```
+
+### isBetween (d1: Date, d2: Date): DateTimez
+Check whether a DateTimez is between 2 other Dates or not.
+Return true if equal to first parameter or second parameter.
+
+Units of measurements: Year, Month, Date, Hour, Minute, Second
+
+```js
+const foo = date(2019, 5, 20);
+const bar = new DateTimez(2019, 5, 27);
+const fooBar = new Date(2019, 5, 30);
+
+bar.isBetween(foo, fooBar) // true
+foo.isBetween(bar, fooBar) // false
+```
+
+<br/>
 
 ## Format
 ### format(format: String, locale?: String)
@@ -356,7 +376,14 @@ foo.format('dddd DD MMMM YYYY hh:mm:ss', 'id') // Sabtu 12 Desember 2021 03:24:0
 
 ## Playground
 
-You can use Gitpod an online IDE(which is free for Open Source) for running the examples online.
+You can use Gitpod as an online IDE(which is free for Open Source) for running the examples online.
+
+In Gitpod terminal:
+```
+cd datetimez
+npm i
+npm start
+```
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/faturachmanyusup/examples/blob/main/examples/datetimez)
 
