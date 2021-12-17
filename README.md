@@ -250,7 +250,7 @@ foo.date // 28
 
 <br/>
 
-## Modify
+## Validation
 ### isBefore (d: Date): DateTimez
 ```js
 const year2019 = date(2019, 5, 20);
