@@ -2,7 +2,7 @@
 
 [![npm version](https://img.shields.io/npm/v/datetimez.svg?style=flat)](https://www.npmjs.com/package/datetimez)
 [![install size](https://packagephobia.now.sh/badge?p=datetimez)](https://packagephobia.now.sh/result?p=datetimez)
-[![year download ](https://img.shields.io/npm/dy/datetimez)](https://img.shields.io/npm/dy/datetimez)
+[![year download ](https://img.shields.io/npm/dt/datetimez)](https://img.shields.io/npm/dt/datetimez)
 [![license](https://img.shields.io/npm/l/datetimez)](https://img.shields.io/npm/l/datetimez)
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/faturachmanyusup/examples/blob/main/examples/datetimez)
 <br>
@@ -51,10 +51,10 @@ const foo = date(2021, 5);
 foo.year    // 2021
 foo.month   // 5 default 0
 foo.date    // 1 default 1
-foo.hour    // 1 default 0
-foo.minute    // 1 default 0
-foo.second    // 1 default 0
-foo.millisecond   // 1 default 0
+foo.hour    // 0 default 0
+foo.minute    // 0 default 0
+foo.second    // 0 default 0
+foo.millisecond   // 0 default 0
 
 // Create date using string as parameter
 const bar = date('2021-11-01T03:24:00');
@@ -67,8 +67,10 @@ bar.minute	// 24
 
 ### Import DateTimez
 ```js
+// CommonJS
 const { DateTimez } = require('datetimez');
-// OR
+
+// ES6
 import { DateTimez } from 'datetimez';
 
 // Create date with current date as a value
@@ -80,10 +82,10 @@ const foo = new DateTimez(2021, 5);
 foo.year    // 2021
 foo.month   // 5 default 0
 foo.date    // 1 default 1
-foo.hour    // 1 default 0
-foo.minute    // 1 default 0
-foo.second    // 1 default 0
-foo.millisecond	  // 1 default 0
+foo.hour    // 0 default 0
+foo.minute    // 0 default 0
+foo.second    // 0 default 0
+foo.millisecond	  // 0 default 0
 
 // Create date using string as parameter
 const bar = new DateTimez('2021-11-01T03:24:00');
@@ -188,7 +190,7 @@ date(2021, 1, 5).addMonth(5).month // 6
 
 // if result of calculation is bigger than 11, it will increase year
 const foo = date(2021, 5, 10);
-foo.addMonth(8).month // 2
+foo.addMonth(8).month // 1
 foo.year // 2022
 
 // if date is last date of previous month and not available after calculation. Date will be decreased to nearest available date.
@@ -250,7 +252,7 @@ foo.date // 28
 
 <br/>
 
-## Modify
+## Validate
 ### isBefore (d: Date): DateTimez
 ```js
 const year2019 = date(2019, 5, 20);
@@ -273,12 +275,12 @@ year2021.isAfter(year2021) // false
 
 ### isEqual (d: Date): DateTimez
 ```js
-const year = date(2019, 5, 20);
-const sameYear = date(2019, 5, 20);
+const foo = date(2021, 5, 20);
+const bar = date(2021, 5, 20);
+const fooBar = date(2021, 5, 20, 17);
 
-year.isAfter(sameYear) // false
-sameYear.isAfter(year) // false
-sameYear.isAfter(year2021) // true
+foo.isEqual(bar) // true
+bar.isEqual(fooBar) // false
 ```
 
 ### isBetween (d1: Date, d2: Date): DateTimez
