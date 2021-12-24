@@ -190,7 +190,7 @@ date(2021, 1, 5).addMonth(5).month // 6
 
 // if result of calculation is bigger than 11, it will increase year
 const foo = date(2021, 5, 10);
-foo.addMonth(8).month // 2
+foo.addMonth(8).month // 1
 foo.year // 2022
 
 // if date is last date of previous month and not available after calculation. Date will be decreased to nearest available date.
