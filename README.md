@@ -174,12 +174,12 @@ date(2021, 1, 5).addDate(5).date // 10
 
 // in case result of calculation is bigger than last date of current month, it will increase month
 const foo = date(2021, 0, 31);
-foo.addDate(5).date // 4
+foo.addDate(5).date // 5
 foo.month // 1
 
 // just like case above, addDate will increase year if result of calculation is bigger than Des 31st
 const bar = date(2021, 11, 31);
-bar.addDate(5).date // 4
+bar.addDate(5).date // 5
 bar.month // 0
 bar.year // 2022
 ```
