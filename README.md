@@ -275,7 +275,7 @@ year2021.isAfter(year2021) // false
 
 ### isEqual (d: Date): DateTimez
 ```js
-const foo = date(2019, 5, 20);
+const foo = date(2021, 5, 20);
 const bar = date(2021, 5, 20);
 const fooBar = date(2021, 5, 20, 17);
 
