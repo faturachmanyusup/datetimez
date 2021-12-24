@@ -51,10 +51,10 @@ const foo = date(2021, 5);
 foo.year    // 2021
 foo.month   // 5 default 0
 foo.date    // 1 default 1
-foo.hour    // 1 default 0
-foo.minute    // 1 default 0
-foo.second    // 1 default 0
-foo.millisecond   // 1 default 0
+foo.hour    // 0 default 0
+foo.minute    // 0 default 0
+foo.second    // 0 default 0
+foo.millisecond   // 0 default 0
 
 // Create date using string as parameter
 const bar = date('2021-11-01T03:24:00');
