@@ -8,8 +8,10 @@
     "node": "*"
   },
   "scripts": {
-    "build": "npx eslint . --ext .ts && npx tsc && jest --runInBand --verbose",
-    "test": "npx eslint . --ext .ts && npx tsc && jest --watchAll --coverage --runInBand --verbose",
+    "build": "npx eslint . --ext .ts && npx tsc",
+    "build:test": "npx eslint . --ext .ts && npx tsc && jest --runInBand --verbose",
+    "test": "npx eslint . --ext .ts && npx tsc && jest --runInBand --verbose",
+    "test:full": "npx eslint . --ext .ts && npx tsc && jest --watchAll --coverage --runInBand --verbose --forceExit --detectOpenHandles",
     "lint": "npx eslint . --ext .ts",
     "lint:fix": "npx eslint . --ext .ts --fix"
   },
