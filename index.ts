@@ -114,7 +114,7 @@ class DateTimez extends Date {
 	}
 
 	get unix(): number {
-		return Math.round(this.getTime() / 1000);
+		return Number(String(+ this).slice(0, -3));
 	}
 
 	set unix(_) {
