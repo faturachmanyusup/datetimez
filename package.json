@@ -10,7 +10,7 @@
   "scripts": {
     "build": "npx eslint . --ext .ts && npx tsc",
     "build:test": "npx eslint . --ext .ts && npx tsc && jest --runInBand --verbose",
-    "test": "npx eslint . --ext .ts && npx tsc && jest --watchAll --coverage --runInBand --verbose",
+    "test": "npx eslint . --ext .ts && npx tsc && jest --watchAll --coverage --runInBand --verbose --bail",
     "lint": "npx eslint . --ext .ts",
     "lint:fix": "npx eslint . --ext .ts --fix"
   },
