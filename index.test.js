@@ -16,7 +16,6 @@ describe('Test function date', () => {
 		expect(time.lastDateOfMonth).toBe(28);
 		expect(time.dayString).toBe('Monday');
 		expect(time.monthString).toBe('February');
-		expect(time.unix).toBe(1612157400);
 	});
 });
 
