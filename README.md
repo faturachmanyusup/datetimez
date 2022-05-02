@@ -146,7 +146,7 @@ foo.second // 10
 ```
 ### millisecond < Number > #readonly
 ```js
-foo.monthString // 0
+foo.millisecond // 0
 ```
 ### unix < Number > #readonly
 ```js
