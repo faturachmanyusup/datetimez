@@ -7,7 +7,7 @@
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/faturachmanyusup/examples/blob/main/examples/datetimez)
 <br>
 
-a small size date (and time) formater library based on native javascript Date.
+a small size date (and time) formatter library based on native javascript Date.
 
 ## Installing
 
@@ -177,7 +177,7 @@ const foo = date(2021, 0, 31);
 foo.addDate(5).date // 5
 foo.month // 1
 
-// just like case above, addDate will increase year if result of calculation is bigger than Des 31st
+// just like case above, addDate will increase year if result of calculation is bigger than Dec 31st
 const bar = date(2021, 11, 31);
 bar.addDate(5).date // 5
 bar.month // 0
